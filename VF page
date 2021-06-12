@@ -1,1 +1,77 @@
 
+<apex:page >      
+   <apex:form >
+     <apex:pageblock >	
+         <apex:pageBlockSection >
+         <apex:inputText id="LeadNo" >
+	        <apex:outputLabel >Lead_No :- </apex:outputLabel>
+	       </apex:inputText>  
+             <br/>    <apex:inputText id="LeadOwner" >
+	        <apex:outputLabel >Lead_Owner :- </apex:outputLabel>
+	       </apex:inputText>        
+         </apex:pageBlockSection>
+   
+       <apex:pageBlockSection >
+	<apex:commandButton value="Save" action="{!Save}" onclick="Save();"/>   
+           </apex:pageBlockSection>
+            </apex:pageblock>
+              <script></script>
+	    <body>
+    	<button onclick="callToServer();">Call To Server</button>
+    </body>
+   </apex:form>
+ </apex:page>
+ Visualforce page – Callout.vfp
+<apex:page controller="Calloutcontroller" title="JSON table" >
+
+<apex:form >
+
+<apex:pageBlock >
+
+<apex:pageBlockTable value="{!performcallout}" var="wrap" width="100%">
+
+<apex:column headerValue="Cccd" value="{!wrap.Cccd}"/>
+
+<apex:column headerValue="LeadNo" value="{!wrap.LeadNo}"/>
+
+<apex:column headerValue="LeadOwner" value="{!wrap.LeadOwner}"/>
+
+<apex:column headerValue="LeadOwnerSpecified" value="{!wrap.LeadOwnerSpecified}"/>
+
+<apex:column headerValue="Company" value="{!wrap.Company}"/>
+
+    
+    
+<apex:column headerValue="FirstName" value="{!wrap.FirstName}"/>
+
+<apex:column headerValue="LastName" value="{!wrap.LastName}"/>
+
+<apex:column headerValue="Title" value="{!wrap.Title}"/>
+
+<apex:column headerValue="Email" value="{!wrap.Email}"/>
+
+<apex:column headerValue="Phone" value="{!wrap.Phone}"/>
+<apex:column headerValue="Fax" value="{!wrap.Fax}"/>
+
+<apex:column headerValue="Mobile" value="{!wrap.Mobile}"/>
+
+
+<apex:column headerValue="Website" value="{!wrap.Website}"/>
+    
+    
+<apex:column headerValue="LeadSource" value="{!wrap.LeadSource}"/>
+  
+    </apex:pageBlockTable>
+
+</apex:pageBlock>
+    
+<apex:pageBlock >
+    
+	<apex:commandButton value="Go To New Page" action="{!returnPage}"/>   
+    
+    </apex:pageBlock>	
+    
+    
+</apex:form>
+
+</apex:page>
